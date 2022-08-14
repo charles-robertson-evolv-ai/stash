@@ -1,0 +1,16 @@
+{
+  "context": {
+    "active": true,
+    "concepts": [
+      {
+        "id": "c1",
+        "variants": [
+          {
+            "id": "v1",
+            "active": true
+          }
+        ]
+      }
+    ]
+  }
+}

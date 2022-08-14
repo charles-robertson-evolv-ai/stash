@@ -1,0 +1,15 @@
+---
+eleventyExcludeFromCollections: true
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag }}/
+layout: base.njk
+---
+<main>
+  <h1>{{ tag }}</h1>
+
+  {% set taglist = collections[tag] %}
+  {%- include "pagelist.njk" -%}
+</main>

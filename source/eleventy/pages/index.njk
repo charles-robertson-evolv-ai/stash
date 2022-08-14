@@ -1,0 +1,11 @@
+---
+layout: base.njk
+eleventyExcludeFromCollections: true
+---
+
+<main>
+  <h1>Entire collection</h2>
+
+  {% set taglist = collections[all] %}
+  {%- include "pagelist.njk" -%}
+</main>

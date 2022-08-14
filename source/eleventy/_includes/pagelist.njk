@@ -1,0 +1,19 @@
+{%- for page in collections.all -%}
+  {# {%- if page.url !== "/" -%} #}
+    <ul class="index-list">
+      <li class="index-item">
+        <p class="index-title"><a class="index-link" href="{{ page.url }}">{{ page.data.title }}</a></p>
+        <div class="index-details">
+          <p class="index-date">{{ page.date | dateToFormat('DD')}}</p>
+          {%- if page.data.tags -%}
+            <span class="index-tags">
+            {%- for tag in page.data.tags -%}
+              {{ ', ' if not loop.first }}<a class="index-tag" href="/tags/{{ tag }}">{{ tag }}</a>
+            {%- endfor-%}
+            </span>
+          {%- endif-%}
+        </div>
+      </li>
+    </ul>
+  {# {%- endif -%} #}
+  {%- endfor -%}

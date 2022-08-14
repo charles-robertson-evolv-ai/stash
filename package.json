@@ -1,0 +1,29 @@
+{
+  "name": "site-capture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve",
+    "clean": "del serve",
+    "build": "npm-run-all -l -s clean build:*",
+    "serve": "npm-run-all -s clean -p watch:* serve:eleventy",
+    "build:evolv": "node evolv-css; node evolv-js.js",
+    "build:eleventy": "npx @11ty/eleventy",
+    "watch:evolv-js": "nodemon --watch source/evolv evolv-js.js",
+    "watch:evolv-css": "nodemon --ext scss --watch source/evolv evolv-css.js",
+    "serve:eleventy": "npx @11ty/eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "del-cli": "^5.0.0",
+    "jsdom": "^20.0.0",
+    "nodemon": "^2.0.19",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.54.4"
+  }
+}
